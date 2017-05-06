@@ -7,14 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer = false;
+  serverCreationStatus = 'No server was created!';
 
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
+      // alert('You\'re now enabled to add a server!');
+      console.log('allowNewServer = ' + this.allowNewServer);
     }, 2000);
   }
 
   ngOnInit() {
   }
 
+  onCreateServer() {
+    this.serverCreationStatus = 'A server was created!';
+  }
 }
